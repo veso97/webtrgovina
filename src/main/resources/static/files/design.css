@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    pading:0;
+    box-sizing: border-box;
+    font-family: ´Spartan´,sans-serif;
+}
+
+h1{
+font-size: 50px;
+    line-height: 64px;
+    color: #222222222;
+
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+
+}
+
+h4{
+    font-size: 20px;
+    color: #222;
+
+}
+h6{
+    font weight:700;
+    color: #222;
+
+}
+
+p{font-size: 16px;
+color: black;
+margin: 15px 0 20px 0}
+
+.selection-p1{
+    padding: 40px 80px;
+}
+
+.selection-m1{
+    margin: 40px 0;
+}
+
+body{
+    width: 100%;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #cdd0d5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06) ;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#navbar li{
+list-style: none;
+padding: 0 20px;
+    position: relative;
+}
+#navbar li a{
+ text-decoration: none;
+font-size: 16px;
+font-weight: 600;
+color:deepskyblue;
+transition:0.3s ease}
+
+#navbar li a:hover,
+#navbar li a.active{
+color:deepskyblue}
+
+#navbar li a.active:after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: deepskyblue;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#hero{
+    background-image: url("files/Xiaomi.jpg");
+    height: 90vh;
+    width: 100%;
+    background-position: top 25% right 0;
+    background-size: cover;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#hero h1{
+    padding: 15px;
+}
+
+#hero h2{
+    color: deepskyblue;
+}
+#hero button{
+    padding: 16px 30px;
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#feature .fe-box{
+    width: 220px;
+    text-align: center;
+    padding: 25px 15px 34px rgba(0,0,0,0.03);
+    border: 1px solid #28E7FF;
+    border-radius: 4px;
+    margin:15px 0;
+}
+
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgba(0,75,100,0.1);
+}
+
+#feature .fe-box h6{
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: deepskyblue;
+    background: black;
+}
+
+#feature .fe-box h6{
+    display: inline-block;
+    padding:  9px 8px 6px 8px;
+}
+
+#feature{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#feature .fe-box:nth-child(2) h6{
+    color: black;
+    background: deepskyblue;
+
+}
+#feature .fe-box:nth-child(4) h6{
+     color: black;
+    background-color: deepskyblue;
+
+}
+#product1{
+    text-align: center;
+}
+#product1.pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12 px;
+    border: 1px solid #28E7FF;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
+    margin: 15px;
+    border-image-width: 20%;
+}
+#product1 .pro image{
+    width: 50%;
+    border-radius: 25px;
+}
+
+#product1 .pro .des{
+    text-align: start;
+    padding: 10px 0;
+
+}
+#product1 .pro .des span{
+    color: #28E7FF;
+    font size=12px;
+}
