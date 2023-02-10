@@ -92,7 +92,7 @@ color:deepskyblue}
 }
 
 #hero{
-    background-image: url("files/Xiaomi.jpg");
+    background-image: url("Xiaomi.jpg");
     height: 90vh;
     width: 100%;
     background-position: top 25% right 0;
@@ -166,22 +166,34 @@ color:deepskyblue}
 }
 #product1{
     text-align: center;
+
 }
-#product1.pro{
+#product1 .pro{
     width: 23%;
     min-width: 250px;
-    padding: 10px 12 px;
-    border: 1px solid #28E7FF;
+    padding: 10px 12px;
+    border: 2px solid deepskyblue;
     border-radius: 25px;
     cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
-    margin: 15px;
-    border-image-width: 20%;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+
+
 }
-#product1 .pro image{
-    width: 50%;
-    border-radius: 25px;
+
+product1 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.1);
+
 }
+
+#product1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+    po
+}
+
+
 
 #product1 .pro .des{
     text-align: start;
@@ -190,5 +202,47 @@ color:deepskyblue}
 }
 #product1 .pro .des span{
     color: #28E7FF;
-    font size=12px;
+    font-size=12px;
+}
+
+#product1 .pro .des h5{
+    padding-top:7px;
+    color: #1a1a1a;
+    font-size:14px;
+}
+
+#product1 .pro .des  i{
+    font-size:12px;
+    color: yellow;
+}
+
+#product1 .pro .des  h4{
+    padding-top:7px;
+    font-size:15px;
+    font-weight:700;
+    color: #28E7FF;
+}
+
+#product1 .pro .cart{
+    width: 40px;
+    height :40px;
+    line-height: 40px;
+    border-radius:50px;
+    background-color: #e8f6ea;
+    font-weight:500;
+    color:#28E7FF;
+    border: 1px solid #cdd0d5;
+    position:relative;
+    bottom:20px;
+    right:10px;
+
+}
+
+#product1 .pro-contanier{
+
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+
 }
