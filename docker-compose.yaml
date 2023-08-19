@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  knjiznica:
+    container_name: knjiznica
+    build: target
+    image: knjiznica:latest
+    ports:
+      - 80:8080
+    networks:
+      - knjiznica-network
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:latest
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
+    networks:
+      - knjiznica-network
+    environment:
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=lozinka
+      - MYSQL_ROOT_PASSWORD=lozinka
+      - MYSQL_DATABASE=knjiznica
+    ports:
+      - 6306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+volumes:
+  mysql-data:
+networks:
+  knjiznica-network:
+    driver: bridge
