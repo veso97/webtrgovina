@@ -1,12 +1,16 @@
 package ba.sum.fsre.webtrgovina.model;
 
-
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
 public class User {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,6 +24,8 @@ public class User {
     private String password;
     @NotBlank(message="Molimo ponovite Vašu lozinku.")
     private String passwordRepeat;
+
+
 
     private boolean passwordsEqual;
 
@@ -53,6 +59,7 @@ public class User {
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
+
     }
 
 
@@ -60,7 +67,7 @@ public class User {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId (Long id) {
         this.id = id;
     }
 

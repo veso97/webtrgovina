@@ -1,7 +1,5 @@
 package ba.sum.fsre.webtrgovina.config;
 
-import javax.sql.DataSource;
-
 import ba.sum.fsre.webtrgovina.services.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +8,8 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class WebSecurityConfig {
@@ -21,6 +21,7 @@ public class WebSecurityConfig {
     public UserDetailsService userDetailsService() {
         return new UserDetailsService();
     }
+
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -35,23 +36,39 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
+        http.csrf().disable()
+
                 .authorizeHttpRequests()
-                .requestMatchers("/register_user/**", "/", "/files/**","/register")
+                .requestMatchers("register_user/**", "/", "/files/**","/register","/login","/onama","/add_item","/shop","/index","/User","/cart")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
+
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .permitAll()
+
                 .usernameParameter("email")
-                .defaultSuccessUrl("/users", true)
+                .defaultSuccessUrl("/", true)
                 .permitAll()
                 .and()
-                .logout().logoutSuccessUrl("/").permitAll();
+                .formLogin(formLogin ->
+                        formLogin
+                                .loginPage("/login")
+                                .permitAll()
+                )
+                .logout(logout ->
+                        logout
+                                .logoutSuccessUrl("/")
+                                .permitAll()
+                )
+                .authenticationProvider(authenticationProvider())
+                .headers(headers ->
+                        headers.frameOptions().sameOrigin()
+                );
+
 
         http.authenticationProvider(authenticationProvider());
         http.headers().frameOptions().sameOrigin();

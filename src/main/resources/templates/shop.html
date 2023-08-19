@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="files/design.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section id="header">
+    <h3>TecnoShop</h3>
+    <div>
+        <ul id="navbar">
+            <ul id="navbar">
+                <li><a  href="/">Početna</a> </li>
+                <li><a class="active" href="/shop">Shop</a> </li>
+                <li><a  href="/add_item">Dodaj</a> </li>
+                <li><a href="/onama">O nama</a> </li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+                <li>  <a th:href="@{/login}">Login</a></li>
+                <li><a  href="/cart"><i class="fa fa-shopping-cart"></i></a> </li>
+            </ul>
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+<section id="product1" class="selection-p1">
+    <h2>Proizvodi</h2>
+
+        <div class="pro-contanier">
+        <div th:each="product : ${products}" class="pro">
+            <img th:src="@{${product.imagePath}}" />
+            <div class="des">
+
+                    <span th:text="${product.name}">Product Name</span>
+                         <h5 th:text="${product.description}">Product Description</h5>
+                            <div class="star">
+                    <!-- Add your star rating logic here, if available -->
+                    <!-- For example, if product has a rating field, you can use th:each to loop and display stars accordingly -->
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                            </div>
+                <h4 th:text="${product.id}">0.00</h4>
+                    <h4 th:text="${product.price}">0.00BAM</h4>
+            </div>
+
+            <form action="/cart/add" method="post">
+                <input type="hidden" name="itemId" th:value="${product.id}" />
+                <input type="number" name="quantity" value="1" />
+                <button type="submit">Dodaj u košaricu</button>
+            </form>
+            <script th:inline="javascript">
+                function addToCart(productId) {
+                    var quantity = prompt("Unesite željenu količinu:", "1");
+                    if (quantity !== null && quantity.trim() !== "") {
+                        window.location.href = "/cart/add?productId=" + productId + "&quantity=" + quantity;
+                    }
+                }
+            </script>
+            <!-- Button trigger modal -->
+
+        </div>
+        </div>
+
+
+</section>
+
+
+
+
+
+</section>
+
+<footer class="selection-p1">
+    <div class="col">
+        <h3>TecnoShop</h3>
+        <h4>Kontakt</h4>
+        <p><strong>Adresa:</strong>Kralja Tomislava 3,Mostar</p>
+        <p><strong>Kontakt:</strong>00387 36 333 333</p>
+        <p><strong>Radno Vrijeme:</strong>pon-sub,08:00-18:00</p>
+        <div class="follow">
+            <h4>Zapratite nas</h4>
+            <div class="icon">
+                <i class="fa fa-facebook-f"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-twitter"></i>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <h4>O nama</h4>
+        <a href="/onama">O nama</a>
+        <a href="/shop">Kupovina</a>
+        <a href="add_item">Dodaj</a>
+
+
+    </div>
+
+    <div class="col">
+        <h4>Moj Racun</h4>
+        <a href="/login">Prijava</a>
+        <a href="register">Registracija</a>
+
+
+    </div>
+
+
+
+
+
+    </div>
+</footer >
+</body>
+</html>
+
+
+
+
+
+

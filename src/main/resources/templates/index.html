@@ -1,65 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link href="files/design.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <head>
-    <link href="files/design.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <section id="header">
-        <a href="#"><img src="" alt="" height="40px" >TecnoShop </a>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Početna</a> </li>
-                <li><a href="#">Početna</a> </li>
-                <li><a href="#">Početna</a> </li>
-                <li><a href="#"><i class="fa fa-shopping-cart"></i></a> </li>
-            </ul>
-        </div>
-    </section>
+<section id="header">
+    <h3>TecnoShop</h3>
+    <div>
+        <ul id="navbar">
+            <li><a class="active" href="/">Početna</a> </li>
+            <li><a href="/shop">Shop</a> </li>
+            <li><a href="/add_item">Dodaj</a> </li>
+            <li><a href="/onama">O nama</a> </li>
+            <li><a th:href="@{/logout}">Logout</a></li>
+            <li>  <a th:href="@{/login}">Login</a></li>
+            <li><a href="/cart"><i class="fa fa-shopping-cart"></i></a> </li>
+        </ul>
+    </div>
+    <div id="mobile">
+        <li><a href="/cart"><i class="fa fa-shopping-cart"></i></a> </li>
+        <i id="bar" class="fa fa-outdent"></i>
 
-    <section id="hero" >
-        <h4>Ponuda u Nasoj trgovini</h4>
-        <h2>Odlicne cijene</h2>
-        <h1>U nasoj Trgovini</h1>
-        <p>Ustedite do 40%</p>
-        <button>Kupuj sada</button>
-    </section>
+    </div>
+</section>
 
-    <section id="feature" class="selection-p1">
-        <div class="fe-box">
-            <img src="files/fa-box/dostava1.jfif" width="150px" height="150px">
-            <h6>Besplatna Dostava</h6>
-        </div>
+<section id="hero" >
+    <h4>Ponuda u Nasoj trgovini</h4>
+    <h2>Odlicne cijene</h2>
+    <h1>U nasoj Trgovini</h1>
+    <p>Ustedite do 40%</p>
+    <form action="/shop" method="get">
+    <button>Kupuj sada</button>
+    </form>
+</section>
 
-        <div class="fe-box">
-            <img src="files/fa-box/cash.jpg" width="150px" height="150px">
-            <h6>Placanje Gotovinom</h6>
-        </div>
+<section id="feature" class="selection-p1">
+    <div class="fe-box">
+        <img src="files/fa-box/dostava1.jfif" width="150px" height="150px">
+        <h6>Besplatna Dostava</h6>
+    </div>
 
-        <div class="fe-box">
-            <img src="files/fa-box/onlinepl.jpg" width="150px" height="150px">
-            <h6>Online Placanje</h6>
-        </div>
+    <div class="fe-box">
+        <img src="files/fa-box/cash.jpg" width="150px" height="150px">
+        <h6>Placanje Gotovinom</h6>
+    </div>
 
-        <div class="fe-box">
-            <img src="files/fa-box/garancija.jfif" width="150px" height="150px">
-            <h6>5 Godina Garancije</h6>
-        </div>
+    <div class="fe-box">
+        <img src="files/fa-box/onlinepl.jpg" width="150px" height="150px">
+        <h6>Online Placanje</h6>
+    </div>
 
-        <div class="fe-box">
+    <div class="fe-box">
+        <img src="files/fa-box/garancija.jfif" width="150px" height="150px">
+        <h6>5 Godina Garancije</h6>
+    </div>
 
-            <img src="/files/fa-box/pouzdanost.jpg" width="150px" height="150px">
-            <h6>Pouzdanost</h6>
-        </div>
-    </section>
+    <div class="fe-box">
 
-    <section id="product1" class="selection-p1">
-        <h2>Preporučeni Proizvodi</h2>
-        <p>Najbolje ocijenjeni proizvodi.</p>
-        <div class="pro-contanier">
+        <img src="/files/fa-box/pouzdanost.jpg" width="150px" height="150px">
+        <h6>Pouzdanost</h6>
+    </div>
+</section>
+
+<section id="product1" class="selection-p1">
+    <h2>Preporučeni Proizvodi</h2>
+    <p>Najbolje ocijenjeni proizvodi.</p>
+    <div class="pro-contanier">
         <div class="pro">
             <img src="files/proizvodi/apple-iphone-14-plus-512gb-purple.jpg" alt="samsung">
             </img>
@@ -75,131 +88,201 @@
                 </div>
                 <h4>1400BAM</h4>
             </div>
+
             <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
         </div>
-            <div class="pro">
-                <img src="files/proizvodi/samsung_a33_128_6_bijeli.jpg.mst.webp" alt="samsung">
-                </img>
-                <div class="des">
-                    <span>Samsung</span>
-                    <h5>Samsung A52 8/128</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>700BAM</h4>
-                </div>
-                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="files/proizvodi/s22.jfif" alt="samsungs22">
-                </img>
-                <div class="des">
-                    <span>Samsung </span>
-                    <h5>Samsung S22 Ultra 8/128</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>2000BAM</h4>
-                </div>
-                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="files/proizvodi/xiaomi12.png" alt="Xiaomimi12">
-                </img>
-                <div class="des">
-                    <span>Xiaomi </span>
-                    <h5>Xiaomi Mi12 8/256</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>1400BAM</h4>
-                </div>
-                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="files/proizvodi/xiaomi-mi-watch-black-1-1.jpg" alt="apple">
-                </img>
-                <div class="des">
-                    <span>Xiaomi </span>
-                    <h5>Xiaomi Mi Watch</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>500BAM</h4>
-                </div>
-                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="files/proizvodi/trot1.jpg" alt="xiaomi">
-                </img>
-                <div class="des">
-                    <span>Xiaomi </span>
-                    <h5>Xiaomi E-Scooter</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>800BAM</h4>
-                </div>
-                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="files/proizvodi/32933-65-Philips-4K-UHD-TV-65PUS851712-1.webp" alt="Philips">
-                </img>
-                <div class="des">
-                    <span>Philips </span>
-                    <h5>Philips Tv 4K UHD 65´ </h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>1200BAM</h4>
-                </div>
-                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
-            </div>
 
-
-            <div class="pro">
-                <img src="files/proizvodi/asus.jpg" alt="apple">
-                </img>
-                <div class="des">
-                    <span>Asus </span>
-                    <h5>Asus Vivobook 8GB RAM 256Gb SSD 15.6</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>1400BAM</h4>
+        <div class="pro">
+            <img src="files/proizvodi/samsung_a33_128_6_bijeli.jpg.mst.webp" alt="samsung">
+            </img>
+            <div class="des">
+                <span>Samsung</span>
+                <h5>Samsung A52 8/128</h5>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                 </div>
-                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+                <h4>700BAM</h4>
             </div>
+            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            <!-- Button trigger modal -->
+
         </div>
-        
-    </section>
+        <div class="pro">
+            <img src="files/proizvodi/s22.jfif" alt="samsungs22">
+            </img>
+            <div class="des">
+                <span>Samsung </span>
+                <h5>Samsung S22 Ultra 8/128</h5>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <h4>2000BAM</h4>
+            </div>
+            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="files/proizvodi/xiaomi12.png" alt="Xiaomimi12">
+            </img>
+            <div class="des">
+                <span>Xiaomi </span>
+                <h5>Xiaomi Mi12 8/256</h5>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <h4>1400BAM</h4>
+            </div>
+            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="files/proizvodi/xiaomi-mi-watch-black-1-1.jpg" alt="apple">
+            </img>
+            <div class="des">
+                <span>Xiaomi </span>
+                <h5>Xiaomi Mi Watch</h5>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <h4>500BAM</h4>
+            </div>
+            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="files/proizvodi/trot1.jpg" alt="xiaomi">
+            </img>
+            <div class="des">
+                <span>Xiaomi </span>
+                <h5>Xiaomi E-Scooter</h5>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <h4>800BAM</h4>
+            </div>
+            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="files/proizvodi/32933-65-Philips-4K-UHD-TV-65PUS851712-1.webp" alt="Philips">
+            </img>
+            <div class="des">
+                <span>Philips </span>
+                <h5>Philips Tv 4K UHD 65´ </h5>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <h4>1200BAM</h4>
+            </div>
+            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+        </div>
+
+
+        <div class="pro">
+            <img src="files/proizvodi/asus.jpg" alt="apple">
+            </img>
+            <div class="des">
+                <span>Asus </span>
+                <h5>Asus Vivobook 8GB RAM 256Gb SSD 15.6</h5>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <h4>1400BAM</h4>
+            </div>
+            <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+        </div>
+    </div>
+
+</section>
+
+<section id="sm-banner" class="selection-p1">
+    <div class="banner-box">
+        <h4>Specijalna Ponuda</h4>
+        <h3>  Na svakih potosenih<br>500KM poklon bon od 50KM</h3>
+        <br>
+        <form action="/shop" method="get">
+            <button>Vidi Vise</button>
+        </form>
+
+    </div>
+
+
+
+</section>
+
+<footer class="selection-p1">
+    <div class="col">
+        <h3>TecnoShop</h3>
+        <h4>Kontakt</h4>
+        <p><strong>Adresa:</strong>Kralja Tomislava 3,Mostar</p>
+        <p><strong>Kontakt:</strong>00387 36 333 333</p>
+        <p><strong>Radno Vrijeme:</strong>pon-sub,08:00-18:00</p>
+        <div class="follow">
+            <h4>Zapratite nas</h4>
+            <div class="icon">
+                <i class="fa fa-facebook-f"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-twitter"></i>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <h4>O nama</h4>
+        <a href="/onama">O nama</a>
+        <a href="/shop">Kupovina</a>
+        <a href="add_item">Dodaj</a>
+
+
+    </div>
+
+    <div class="col">
+        <h4>Moj Racun</h4>
+        <a href="/login">Prijava</a>
+        <a href="register">Registracija</a>
+
+
+    </div>
+
+
+
+
+
+
+    </div>
+</footer >
 </body>
 </html>

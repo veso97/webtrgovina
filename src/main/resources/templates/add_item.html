@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<link href="files/design.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<html lang="hr">
+
+
+
+<head>
+  <link href="files/design.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <meta charset="UTF-8">
+  <title>Vaš Web Shop - Dodavanje proizvoda</title>
+</head>
+<body>
+<section id="header">
+    <h3>TecnoShop</h3>
+    <div>
+        <ul id="navbar">
+            <ul id="navbar">
+                <li><a  href="/">Početna</a> </li>
+                <li><a href="/shop">Shop</a> </li>
+                <li><a class="active" href="/add_item">Dodaj</a> </li>
+                <li><a href="/onama">O nama</a> </li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+                <li>  <a th:href="@{/login}">Login</a></li>
+                <li><a  href="/cart"><i class="fa fa-shopping-cart"></i></a> </li>
+            </ul>
+        </ul>
+    </div>
+</section>
+
+<div class="container vh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-6">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center"  style="border-radius: 1rem;">
+
+                    <form th:action="@{/add_new_item}" th:object="${product}" method="post" enctype="multipart/form-data">
+  <div class="form-group row">
+    <div class="col-8">
+  <label for="naziv">Naziv:</label>
+  <input type="text" id="naziv" name="naziv" th:field="*{name}">
+    </div>
+  </div>
+
+      <div class="form-group row">
+        <div class="col-8">
+      <label for="cijena">Cijena:</label>
+  <input type="number" id="cijena" name="cijena" th:field="*{price}">
+        </div>
+      </div>
+
+
+          <div class="form-group row">
+            <div class="col-8">
+          <label for="opis">Opis:</label>
+  <textarea id="opis" name="opis" th:field="*{description}"></textarea>
+            </div>
+          </div>
+
+    <div class="form-group row">
+        <div class="col-8">
+            <label for="slika">Slika:</label>
+            <input type="file" class="mt-2 btn btn-block btn-outline-secondary" id="slika" name="slika" accept="image/*" th:action="@{/add_new_item1}" th:object="${product}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="productId" value="${product.id}">
+        </div>
+    </div>
+
+                    <button type="submit" class="btn btn-block btn-primary">Dodaj proizvod</button>
+
+            </div>
+        </div>
+    </div>
+
+</form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

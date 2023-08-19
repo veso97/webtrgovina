@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="files/design.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<section id="header">
+  <h3>TecnoShop</h3>
+  <div>
+    <ul id="navbar">
+      <ul id="navbar">
+        <li><a  href="/">Početna</a> </li>
+        <li><a href="/shop">Shop</a> </li>
+        <li><a href="/add_item">Dodaj</a> </li>
+        <li><a href="/onama">O nama</a> </li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+        <li>  <a class="active" th:href="@{/login}">Login</a></li>
+        <li><a  href="/cart"><i class="fa fa-shopping-cart"></i></a> </li>
+      </ul>
+    </ul>
+  </div>
+</section>
+
+
+<div class="container vh-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-6">
+      <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center"  style="border-radius: 1rem;">
+          <h3>Prijava na sustav</h3>
+          <form th:action="@{/login}" th:object="${user}" method="post">
+            <div class="m-3">
+              <div th:if="${param.error}" class="alert alert-danger">Pogrešni korisnički podaci, pokušajte ponovo.</div>
+              <div class="form-group row">
+                <label class="col-4 col-form-label">E-mail </label>
+                <div class="col-8">
+                  <input type="email" th:field="*{email}" class="form-control" required />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-form-label">Lozinka </label>
+                <div class="col-8">
+                  <input type="password" th:field="*{password}" class="form-control"
+                         required minlength="6" maxlength="10"/>
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-block btn-primary">Prijavi se</button>
+              </div>
+              <div>
+                <a href="register" class="mt-2 btn btn-block btn-outline-secondary">Registriraj se</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

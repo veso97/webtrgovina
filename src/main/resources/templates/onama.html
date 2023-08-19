@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="files/design.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<section id="header">
+  <h3>TecnoShop</h3>
+  <div>
+    <ul id="navbar">
+      <ul id="navbar">
+        <li><a  href="/">Početna</a> </li>
+        <li><a href="/shop">Shop</a> </li>
+        <li><a href="/add_item">Dodaj</a> </li>
+        <li><a class="active" href="/onama">O nama</a> </li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+        <li>  <a th:href="@{/login}">Login</a></li>
+        <li><a class="active" href="/cart"><i class="fa fa-shopping-cart"></i></a> </li>
+      </ul>
+    </ul>
+  </div>
+</section>
+
+<section id="hero" >
+  <h4>Ponuda u Nasoj trgovini</h4>
+  <h2>Odlicne cijene</h2>
+  <h1>U nasoj Trgovini</h1>
+  <p>Ustedite do 40%</p>
+  <form action="/shop" method="get">
+    <button>Kupuj sada</button>
+  </form>
+</section>
+
+
+
+<section id="product1" class="selection-p1">
+  <h2>Preporučeni Proizvodi</h2>
+  <p>Najbolje ocijenjeni proizvodi.</p>
+  <div class="pro-contanier">
+
+
+
+
+
+
+    <div class="pro">
+      <img src="files/proizvodi/Sample_User_Icon.png" alt="samsung">
+      <div class="des">
+        <span>Veselko Coric</span>
+        <h5>Fsre:1728/RR</h5>
+        <div class="star">
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="pro">
+      <img src="files/proizvodi/Sample_User_Icon.png" alt="samsung">
+      <div class="des">
+        <span>Marin Marinčić</span>
+        <h5>Fsre:1693/RR</h5>
+        <div class="star">
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="pro">
+      <img src="files/proizvodi/Sample_User_Icon.png" alt="samsung">
+      <div class="des">
+        <span>Maja Musa</span>
+        <h5>Fsre:1889/RR</h5>
+        <div class="star">
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="pro">
+      <img src="files/proizvodi/Sample_User_Icon.png" alt="samsung">
+      <div class="des">
+        <span>Mateo Hrkać</span>
+        <h5>Fsre:1946/RR</h5>
+        <div class="star">
+
+        </div>
+
+      </div>
+
+    </div>
+
+</section>
+
+<section id="sm-banner" class="selection-p1">
+  <div class="banner-box">
+    <h4>Specijalna Ponuda</h4>
+    <h3>  Na svakih potosenih<br>500KM poklon bon od 50KM</h3>
+    <br>
+    <form action="/shop" method="get">
+    <button>Vidi Vise</button>
+    </form>
+  </div>
+
+
+
+</section>
+
+<footer class="selection-p1">
+  <div class="col">
+    <h3>TecnoShop</h3>
+    <h4>Kontakt</h4>
+    <p><strong>Adresa:</strong>Kralja Tomislava 3,Mostar</p>
+    <p><strong>Kontakt:</strong>00387 36 333 333</p>
+    <p><strong>Radno Vrijeme:</strong>pon-sub,08:00-18:00</p>
+    <div class="follow">
+      <h4>Zapratite nas</h4>
+      <div class="icon">
+        <i class="fa fa-facebook-f"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-twitter"></i>
+
+
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+
+  <div class="col">
+    <h4>O nama</h4>
+    <a href="/onama">O nama</a>
+    <a href="/shop">Kupovina</a>
+    <a href="add_item">Dodaj</a>
+
+
+  </div>
+
+  <div class="col">
+    <h4>Moj Racun</h4>
+    <a href="/login">Prijava</a>
+    <a href="register">Registracija</a>
+
+
+  </div>
+
+
+
+
+
+  </div>
+</footer >
+</body>
+</html>

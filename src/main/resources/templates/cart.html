@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hr">
+<link href="files/design.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<body>
+
+
+
+
+<section id="header">
+  <h3>TecnoShop</h3>
+  <div>
+    <ul id="navbar">
+      <ul id="navbar">
+        <li><a  href="/">Početna</a> </li>
+        <li><a href="/shop">Shop</a> </li>
+        <li><a href="/add_item">Dodaj</a> </li>
+        <li><a href="/onama">O nama</a> </li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+        <li>  <a th:href="@{/login}">Login</a></li>
+        <li><a class="active" href="/cart"><i class="fa fa-shopping-cart"></i></a> </li>
+      </ul>
+    </ul>
+  </div>
+</section>
+
+<div class="container mt-4">
+  <h1>Vaša košarica</h1>
+  <table id="customers">
+    <thead>
+    <tr>
+      <th scope="col">Proizvod</th>
+      <th scope="col">Količina</th>
+      <th scope="col">Cijena</th>
+      <th scope="col">Ukupno</th>
+      <th scope="col">izbrisi proizvod</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Prikaz stavki iz košarice -->
+    <tr th:each="item, itemInfo : ${cartItems}">
+      <td th:text="${item.product.name}"></td>
+      <td th:text="${item.quantity}"></td>
+      <td th:text="${item.product.price}"></td>
+      <td th:text="${item.product.price * item.quantity}"></td>
+
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3" class="text-right">Ukupno:</td>
+      <td colspan="2" th:text="${totalPrice} + ' BAM'"></td>
+    </tr>
+    </tfoot>
+  </table>
+
+
+
+
+
+
+</body>
+
+</html>
