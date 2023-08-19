@@ -10,6 +10,6 @@ RUN mvn -f /home/app/pom.xml clean package -DskipTests
 # Pokretanje aplikacije
 #
 FROM openjdk:18-jdk-slim
-COPY --from=build /home/app/target/Knjiznica-0.0.1-SNAPSHOT.jar /usr/local/lib/Knjiznica.jar
+COPY --from=build /home/app/target/webtrgovina-0.0.1-SNAPSHOT.jar /usr/local/lib/webtrgovina.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/usr/local/lib/Knjiznica.jar"]
